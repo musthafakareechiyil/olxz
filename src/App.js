@@ -3,6 +3,8 @@ import './App.css';
 import Home from './Pages/Home';
 import Signup from './Pages/Signup'
 import Login from './Pages/Login'
+import Create from './Pages/Create'
+import View from './Pages/ViewPost'
 import {Route, Routes } from 'react-router-dom';
 import { AuthContext, FirebaseContext } from './store/Context';
 
@@ -23,6 +25,8 @@ function App() {
         <Route  exact path = '/' element = {<Home />}/>          
         <Route path = '/signup' element = {<Signup/>} /> 
         <Route path = '/login' element = {<Login/>} /> 
+        <Route path = '/create' element = {<Create/>} /> 
+        <Route path = '/view' element = {<View/>} /> 
       </Routes>
     </div>
   );

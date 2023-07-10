@@ -48,7 +48,9 @@ function Header() {
           navigate('/login')
         }}>Logout</span>}          
 
-        <div className="sellMenu">
+        <div onClick={() => {
+          navigate('/create')
+        }} className="sellMenu">
           <SellButton></SellButton>
           <div className="sellMenuContent">
             <SellButtonPlus></SellButtonPlus>

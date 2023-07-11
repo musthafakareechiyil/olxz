@@ -3,8 +3,12 @@ import React, { useContext, useEffect, useState } from 'react';
 import Heart from '../../assets/Heart';
 import './Post.css';
 import { FirebaseContext } from '../../store/Context';
+import { PostContext } from '../../store/PostContext';
+import { useNavigate } from 'react-router-dom';
 
 function Posts() {
+  const navigate = useNavigate()
+  const {setPostDetails} = useContext(PostContext)
   const {firebase} = useContext(FirebaseContext)
   const [product,setProduct] = useState([])
 
@@ -32,6 +36,11 @@ function Posts() {
           return  (         
           <div
           className="card"
+          onClick={() => {
+            setPostDetails(product)
+            navigate('/view')
+          }}
+          
         >
           <div className="favorite">
             <Heart></Heart>
